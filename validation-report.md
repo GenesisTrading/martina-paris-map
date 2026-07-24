@@ -1,11 +1,11 @@
 # Paris accommodation map validation report
 
 Checked date: 2026-07-24
-Generated: 2026-07-24T18:32:59.078Z
+Generated: 2026-07-24T21:05:57.281Z
 
 ## Conclusion
 
-The deliverable distinguishes objective walking-time contours from subjective accommodation recommendation zones. Per the latest map-owner decision, the red recommendation fill deliberately reuses the objective 15-minute pedestrian isochrone from Gare du Nord. Green and blue recommendation polygons remain separate manually selected accommodation zones. Recommendation polygons are explicit editable GeoJSON geometries and are not inferred from neighbourhood names.
+The deliverable distinguishes objective walking-time contours from subjective accommodation recommendation zones. Per the latest map-owner decision, the red recommendation fill deliberately reuses the objective 10-minute pedestrian isochrone from Gare du Nord. Green and blue recommendation polygons remain separate manually selected accommodation zones. Recommendation polygons are explicit editable GeoJSON geometries and are not inferred from neighbourhood names.
 
 ## Sources
 
@@ -33,50 +33,58 @@ Single origin: Gare du Nord, 2.3562878, 48.8819585.
 
 ## Recommendation Zone Label Walking Times
 
-These are pedestrian routes to the label point of each recommendation polygon. For green and blue, they are not claims that every point inside the polygon has that same walking time. For red, the polygon itself is the generated 15-minute walking contour.
+These are pedestrian routes to the label point of each recommendation polygon. For green and blue, they are not claims that every point inside the polygon has that same walking time. For red, the polygon itself is the generated 10-minute walking contour.
 
 | Zone | Label coordinate lon, lat | Walking time | Route distance | Snapped target |
 | --- | --- | --- | --- | --- |
-| 15-minute walking red zone | 2.3563000, 48.8799000 | 3.8 min | 288 m | 2.3563190, 48.8799430 |
+| 10-minute walking red zone | 2.3563000, 48.8799000 | 3.8 min | 288 m | 2.3563190, 48.8799430 |
 | Avenue Trudaine | 2.3426000, 48.8817500 | 16.6 min | 1,241 m | 2.3423570, 48.8817030 |
 | Lower rue des Martyrs | 2.3393500, 48.8778500 | 19.7 min | 1,478 m | 2.3394640, 48.8778360 |
 | Rue Cadet | 2.3433500, 48.8749000 | 18.6 min | 1,392 m | 2.3431000, 48.8749870 |
+| Saint-Georges / Lorette edge | 2.3374500, 48.8768000 | 22.0 min | 1,650 m | 2.3374480, 48.8768050 |
+| Chabrol / Hauteville edge | 2.3495500, 48.8762500 | 13.0 min | 979 m | 2.3495850, 48.8763350 |
 | Porte Saint-Martin | 2.3556500, 48.8691500 | 21.6 min | 1,621 m | 2.3556280, 48.8691110 |
+| Faubourg Poissonnière / Enghien | 2.3491500, 48.8732500 | 17.1 min | 1,282 m | 2.3491170, 48.8733280 |
 | Canal Saint-Martin central | 2.3635500, 48.8736000 | 18.6 min | 1,397 m | 2.3633430, 48.8735300 |
+| Northern Temple / Vertbois | 2.3604000, 48.8673500 | 28.1 min | 2,110 m | 2.3603530, 48.8672060 |
 | Jacques Bonsergent / République edge | 2.3618000, 48.8710000 | 19.6 min | 1,468 m | 2.3617000, 48.8710450 |
 
 ## Label-In-Polygon Validation
 
 | Zone ID | Label | Label coordinate lon, lat | Inside polygon |
 | --- | --- | --- | --- |
-| red_15_min_walking_contour | 15-min red zone | 2.3563000, 48.8799000 | yes |
+| red_10_min_walking_contour | 10-min red zone | 2.3563000, 48.8799000 | yes |
 | green_avenue_trudaine | Avenue Trudaine | 2.3426000, 48.8817500 | yes |
 | green_lower_rue_des_martyrs | Lower rue des Martyrs | 2.3393500, 48.8778500 | yes |
 | green_rue_cadet | Rue Cadet | 2.3433500, 48.8749000 | yes |
+| green_saint_georges_lorette_edge | Saint-Georges / Lorette | 2.3374500, 48.8768000 | yes |
+| green_chabrol_hauteville_edge | Chabrol / Hauteville | 2.3495500, 48.8762500 | yes |
 | blue_porte_saint_martin | Porte Saint-Martin | 2.3556500, 48.8691500 | yes |
+| blue_faubourg_poissonniere_enghien | Faubourg Poissonnière | 2.3491500, 48.8732500 | yes |
 | blue_canal_saint_martin_central | Canal Saint-Martin | 2.3635500, 48.8736000 | yes |
+| blue_northern_temple_vertbois | Northern Temple | 2.3604000, 48.8673500 | yes |
 | blue_jacques_bonsergent_republique_edge | Toward République | 2.3618000, 48.8710000 | yes |
 
 Result: all labels lie inside their assigned polygons.
 
 ## Recommendation Polygons
 
-Recommendation polygon bbox: 2.3376500, 48.8681500, 2.3684907, 48.8898224.
+Recommendation polygon bbox: 2.3368475, 48.8664388, 2.3643500, 48.8865312.
 
-### 15-minute walking red zone
+### 10-minute walking red zone
 
 Category: Not recommended
 
-Boundary: Objective 15-minute pedestrian isochrone from Gare du Nord, intentionally used as the full red recommendation fill.
+Boundary: Objective 10-minute pedestrian isochrone from Gare du Nord, intentionally used as the full red recommendation fill.
 
 | Geometry item | Value |
 | --- | --- |
 | Geometry type | MultiPolygon |
-| Exact coordinate source | data/walking-isochrones.geojson feature walk_15_min |
+| Exact coordinate source | data/walking-isochrones.geojson feature walk_10_min |
 | Source method | osrm-route-sampled-contours |
-| Coordinate count | 87 coordinate positions |
-| Bounding box lon, lat | 2.3438186, 48.8725684, 2.3684907, 48.8898224 |
-| GeoJSON feature | data/recommendation-zones.geojson feature red_15_min_walking_contour |
+| Coordinate count | 51 coordinate positions |
+| Bounding box lon, lat | 2.3488286, 48.8757658, 2.3641708, 48.8865312 |
+| GeoJSON feature | data/recommendation-zones.geojson feature red_10_min_walking_contour |
 
 ### Avenue Trudaine
 
@@ -121,6 +129,34 @@ Boundary: Rue Cadet and pleasant immediate surroundings bounded by Rue La Fayett
 | 4 | 2.3453266, 48.8740337 | OSM node 94159488 | Rue de Trévise x Rue Richer |
 | 5 | 2.3423548, 48.8740484 | OSM node 94171698 | Rue Cadet x Rue Richer |
 
+### Saint-Georges / Lorette edge
+
+Category: Recommended
+
+Boundary: Selected Saint-Georges / Notre-Dame-de-Lorette edge bounded by Rue Saint-Georges, Rue de Châteaudun, Rue Notre-Dame-de-Lorette and the lower Rue des Martyrs / Rue Henry-Monnier side.
+
+| # | Coordinate lon, lat | Source | Street / note |
+| --- | --- | --- | --- |
+| 1 | 2.3371321, 48.8760607 | OSM node 25207350 | Rue de Châteaudun x Rue Saint-Georges |
+| 2 | 2.3392274, 48.8767703 | OSM node 8296960601 | Rue des Martyrs x Rue Notre-Dame-de-Lorette / Rue Saint-Lazare |
+| 3 | 2.3376500, 48.8791800 | manual vertex | Manual north-east boundary near Rue Henry-Monnier / Rue Clauzel |
+| 4 | 2.3368475, 48.8790016 | OSM node 94174914 | Rue Notre-Dame-de-Lorette x Rue Henry Monnier |
+| 5 | 2.3375301, 48.8783250 | manual vertex | Manual Rue Saint-Georges northern frontage vertex |
+| 6 | 2.3370980, 48.8767169 | manual vertex | Manual Rue Saint-Georges mid-block boundary vertex |
+
+### Chabrol / Hauteville edge
+
+Category: Recommended
+
+Boundary: Tight Chabrol / Hauteville slice south of Square Montholon, bounded by Rue de Paradis, Rue du Faubourg Poissonnière, Rue d'Hauteville and a selected north edge kept outside the 10-minute red contour.
+
+| # | Coordinate lon, lat | Source | Street / note |
+| --- | --- | --- | --- |
+| 1 | 2.3482432, 48.8757887 | OSM node 5077513433 | Rue de Paradis x Rue du Faubourg Poissonnière |
+| 2 | 2.3509072, 48.8753256 | OSM node 94157219 | Rue de Paradis x Rue d'Hauteville |
+| 3 | 2.3511000, 48.8763500 | manual vertex | Manual north-east boundary below Rue de Chabrol / Square Montholon |
+| 4 | 2.3487800, 48.8767800 | manual vertex | Manual north-west boundary below Rue La Fayette / Square Montholon |
+
 ### Porte Saint-Martin
 
 Category: Acceptable compromise — check the exact street
@@ -135,6 +171,19 @@ Boundary: Porte Saint-Martin compromise polygon around Boulevard Saint-Denis / B
 | 4 | 2.3587875, 48.8689332 | OSM node 289568129 | Rue René-Boulanger x Rue Taylor |
 | 5 | 2.3540500, 48.8681500 | manual vertex | Manual south-west vertex on the Rue René-Boulanger / Rue Meslay side |
 
+### Faubourg Poissonnière / Enghien
+
+Category: Acceptable compromise — check the exact street
+
+Boundary: Faubourg Poissonnière compromise block bounded by Rue des Petites-Écuries, Rue d'Enghien, Rue d'Hauteville and Rue du Faubourg Poissonnière.
+
+| # | Coordinate lon, lat | Source | Street / note |
+| --- | --- | --- | --- |
+| 1 | 2.3479115, 48.8740226 | OSM node 94158188 | Rue des Petites-Écuries x Rue du Faubourg Poissonnière |
+| 2 | 2.3505169, 48.8738168 | OSM node 94161169 | Rue des Petites-Écuries x Rue d'Hauteville |
+| 3 | 2.3500470, 48.8721309 | OSM node 94164241 | Rue d'Enghien x Rue d'Hauteville |
+| 4 | 2.3479039, 48.8724568 | OSM node 94158189 | Rue d'Enghien x Rue du Faubourg Poissonnière |
+
 ### Canal Saint-Martin central
 
 Category: Acceptable compromise — check the exact street
@@ -147,6 +196,21 @@ Boundary: Pleasant western and central canal-side section bounded by Quai de Val
 | 2 | 2.3635398, 48.8740589 | OSM node 367947 | Quai de Jemmapes x Rue Bichat |
 | 3 | 2.3643500, 48.8727800 | manual vertex | Manual east-bank vertex near Rue de Lancry / Quai de Jemmapes |
 | 4 | 2.3637458, 48.8729141 | OSM node 94142445 | Quai de Valmy x Rue de Lancry |
+
+### Northern Temple / Vertbois
+
+Category: Acceptable compromise — check the exact street
+
+Boundary: Northern Temple compromise edge south of Porte Saint-Martin, bounded by Rue René Boulanger / Rue Meslay, Rue du Temple, Rue de Turbigo, Rue du Vertbois and Rue Volta.
+
+| # | Coordinate lon, lat | Source | Street / note |
+| --- | --- | --- | --- |
+| 1 | 2.3587875, 48.8689332 | OSM node 289568129 | Rue René-Boulanger x Rue Taylor |
+| 2 | 2.3628564, 48.8683533 | manual vertex | Manual east boundary on the Rue René Boulanger / Rue Meslay side |
+| 3 | 2.3628642, 48.8671948 | OSM node 175033386 | Rue Meslay x Rue du Temple |
+| 4 | 2.3602960, 48.8664388 | OSM node 13452859254 | Rue du Vertbois x Rue de Turbigo |
+| 5 | 2.3582667, 48.8669626 | OSM node 175038101 | Rue Volta x Rue du Vertbois |
+| 6 | 2.3585214, 48.8674092 | manual vertex | Manual north-west Rue Volta / Rue Meslay edge vertex |
 
 ### Jacques Bonsergent / République edge
 
@@ -164,7 +228,8 @@ Boundary: Selected realistically accessible parts toward République, bounded by
 
 ## Walking-Time Contours
 
-- 15-minute pedestrian contour: objective routing-derived contour from the single Gare du Nord origin; also used as the red recommendation fill.
+- 10-minute pedestrian contour: objective routing-derived contour from the single Gare du Nord origin; also used as the red recommendation fill.
+- 15-minute pedestrian contour: objective routing-derived contour from the single Gare du Nord origin.
 - 20-minute pedestrian contour: objective routing-derived contour from the single Gare du Nord origin.
 - Contours file: data/walking-isochrones.geojson.
 - Source method: osrm-route-sampled-contours.
@@ -174,7 +239,7 @@ Boundary: Selected realistically accessible parts toward République, bounded by
 - Gare du Nord is represented by the Nominatim coordinate for OSM way/736530618. OSRM snaps route starts to the nearest routable pedestrian graph point; the snap distance is reported above.
 - Long street geocodes, especially Rue des Martyrs and Canal Saint-Martin, represent full linear features. The approved green and blue accommodation polygons use manually selected subsections and separate label points inside those polygons.
 - Manual vertices were selected for green and blue to follow approved boundary streets and to avoid oversized generic neighbourhood polygons.
-- The active red recommendation geometry is not the earlier compact station-frontage selection. It is the full 15-minute walking contour by explicit map-owner instruction.
+- The active red recommendation geometry is not the earlier compact station-frontage selection. It is the full 10-minute walking contour by explicit map-owner instruction.
 - OSRM / ORS walking times are modelled routing-service times based on available OSM pedestrian data, not observed travel times.
 - If ORS_API_KEY is not provided, contours are generated from OSRM route-duration samples and interpolation between sampled points. That is routing-derived but approximate between grid points.
-- The 15-minute red contour may include any street segment the routing service considers reachable from Gare du Nord within 15 minutes, including parts north or east of the station. That reachability result is now intentional for red only.
+- The 10-minute red contour may include any street segment the routing service considers reachable from Gare du Nord within 10 minutes, including parts north or east of the station. That reachability result is now intentional for red only.

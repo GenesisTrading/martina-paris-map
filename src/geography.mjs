@@ -433,6 +433,88 @@ export const recommendationZones = [
     ]
   },
   {
+    id: "green_saint_georges_lorette_edge",
+    name: "Saint-Georges / Lorette edge",
+    category: "green",
+    boundaryDescription:
+      "Selected Saint-Georges / Notre-Dame-de-Lorette edge bounded by Rue Saint-Georges, Rue de Châteaudun, Rue Notre-Dame-de-Lorette and the lower Rue des Martyrs / Rue Henry-Monnier side.",
+    boundaryStreets: [
+      "Rue Saint-Georges",
+      "Rue Notre-Dame-de-Lorette",
+      "Rue de Châteaudun",
+      "Rue des Martyrs",
+      "Rue Henry-Monnier",
+      "Rue de Navarin"
+    ],
+    labelPoint: [2.33745, 48.8768],
+    label: "Saint-Georges / Lorette",
+    vertices: [
+      {
+        coordinates: [2.3371321, 48.8760607],
+        note: "Rue de Châteaudun x Rue Saint-Georges",
+        osmNode: 25207350
+      },
+      {
+        coordinates: [2.3392274, 48.8767703],
+        note: "Rue des Martyrs x Rue Notre-Dame-de-Lorette / Rue Saint-Lazare",
+        osmNode: 8296960601
+      },
+      {
+        coordinates: [2.33765, 48.87918],
+        note: "Manual north-east boundary near Rue Henry-Monnier / Rue Clauzel"
+      },
+      {
+        coordinates: [2.3368475, 48.8790016],
+        note: "Rue Notre-Dame-de-Lorette x Rue Henry Monnier",
+        osmNode: 94174914
+      },
+      {
+        coordinates: [2.3375301, 48.878325],
+        note: "Manual Rue Saint-Georges northern frontage vertex"
+      },
+      {
+        coordinates: [2.337098, 48.8767169],
+        note: "Manual Rue Saint-Georges mid-block boundary vertex"
+      }
+    ]
+  },
+  {
+    id: "green_chabrol_hauteville_edge",
+    name: "Chabrol / Hauteville edge",
+    category: "green",
+    boundaryDescription:
+      "Tight Chabrol / Hauteville slice south of Square Montholon, bounded by Rue de Paradis, Rue du Faubourg Poissonnière, Rue d'Hauteville and a selected north edge kept outside the 10-minute red contour.",
+    boundaryStreets: [
+      "Rue de Paradis",
+      "Rue du Faubourg Poissonnière",
+      "Rue d'Hauteville",
+      "Rue de Chabrol",
+      "Rue La Fayette"
+    ],
+    labelPoint: [2.34955, 48.87625],
+    label: "Chabrol / Hauteville",
+    vertices: [
+      {
+        coordinates: [2.3482432, 48.8757887],
+        note: "Rue de Paradis x Rue du Faubourg Poissonnière",
+        osmNode: 5077513433
+      },
+      {
+        coordinates: [2.3509072, 48.8753256],
+        note: "Rue de Paradis x Rue d'Hauteville",
+        osmNode: 94157219
+      },
+      {
+        coordinates: [2.3511, 48.87635],
+        note: "Manual north-east boundary below Rue de Chabrol / Square Montholon"
+      },
+      {
+        coordinates: [2.34878, 48.87678],
+        note: "Manual north-west boundary below Rue La Fayette / Square Montholon"
+      }
+    ]
+  },
+  {
     id: "blue_porte_saint_martin",
     name: "Porte Saint-Martin",
     category: "blue",
@@ -473,6 +555,43 @@ export const recommendationZones = [
     ]
   },
   {
+    id: "blue_faubourg_poissonniere_enghien",
+    name: "Faubourg Poissonnière / Enghien",
+    category: "blue",
+    boundaryDescription:
+      "Faubourg Poissonnière compromise block bounded by Rue des Petites-Écuries, Rue d'Enghien, Rue d'Hauteville and Rue du Faubourg Poissonnière.",
+    boundaryStreets: [
+      "Rue du Faubourg Poissonnière",
+      "Rue des Petites-Écuries",
+      "Rue d'Enghien",
+      "Rue d'Hauteville"
+    ],
+    labelPoint: [2.34915, 48.87325],
+    label: "Faubourg Poissonnière",
+    vertices: [
+      {
+        coordinates: [2.3479115, 48.8740226],
+        note: "Rue des Petites-Écuries x Rue du Faubourg Poissonnière",
+        osmNode: 94158188
+      },
+      {
+        coordinates: [2.3505169, 48.8738168],
+        note: "Rue des Petites-Écuries x Rue d'Hauteville",
+        osmNode: 94161169
+      },
+      {
+        coordinates: [2.350047, 48.8721309],
+        note: "Rue d'Enghien x Rue d'Hauteville",
+        osmNode: 94164241
+      },
+      {
+        coordinates: [2.3479039, 48.8724568],
+        note: "Rue d'Enghien x Rue du Faubourg Poissonnière",
+        osmNode: 94158189
+      }
+    ]
+  },
+  {
     id: "blue_canal_saint_martin_central",
     name: "Canal Saint-Martin central",
     category: "blue",
@@ -507,6 +626,53 @@ export const recommendationZones = [
         coordinates: [2.3637458, 48.8729141],
         note: "Quai de Valmy x Rue de Lancry",
         osmNode: 94142445
+      }
+    ]
+  },
+  {
+    id: "blue_northern_temple_vertbois",
+    name: "Northern Temple / Vertbois",
+    category: "blue",
+    boundaryDescription:
+      "Northern Temple compromise edge south of Porte Saint-Martin, bounded by Rue René Boulanger / Rue Meslay, Rue du Temple, Rue de Turbigo, Rue du Vertbois and Rue Volta.",
+    boundaryStreets: [
+      "Rue René Boulanger",
+      "Rue Meslay",
+      "Rue du Temple",
+      "Rue de Turbigo",
+      "Rue du Vertbois",
+      "Rue Volta"
+    ],
+    labelPoint: [2.3604, 48.86735],
+    label: "Northern Temple",
+    vertices: [
+      {
+        coordinates: [2.3587875, 48.8689332],
+        note: "Rue René-Boulanger x Rue Taylor",
+        osmNode: 289568129
+      },
+      {
+        coordinates: [2.3628564, 48.8683533],
+        note: "Manual east boundary on the Rue René Boulanger / Rue Meslay side"
+      },
+      {
+        coordinates: [2.3628642, 48.8671948],
+        note: "Rue Meslay x Rue du Temple",
+        osmNode: 175033386
+      },
+      {
+        coordinates: [2.360296, 48.8664388],
+        note: "Rue du Vertbois x Rue de Turbigo",
+        osmNode: 13452859254
+      },
+      {
+        coordinates: [2.3582667, 48.8669626],
+        note: "Rue Volta x Rue du Vertbois",
+        osmNode: 175038101
+      },
+      {
+        coordinates: [2.3585214, 48.8674092],
+        note: "Manual north-west Rue Volta / Rue Meslay edge vertex"
       }
     ]
   },

@@ -25,6 +25,8 @@ const reportPath = path.join(projectRoot, "validation-report.md");
 const osrmBaseUrl = "https://routing.openstreetmap.de/routed-foot";
 const userAgent = "CodexParisAccommodationMap/1.0";
 const routingRequestDelayMs = 1100;
+const redRecommendationMinutes = 10;
+const contourMinutes = [redRecommendationMinutes, 15, 20];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const formatCoordinate = ([lon, lat]) => `${lon.toFixed(7)}, ${lat.toFixed(7)}`;
@@ -71,28 +73,30 @@ function countCoordinates(coordinates) {
 
 function buildRedIsochroneZoneFeature(isochrones) {
   const sourceFeature = isochrones.features.find(
-    (feature) => feature.properties?.minutes === 15
+    (feature) => feature.properties?.minutes === redRecommendationMinutes
   );
   if (!sourceFeature) {
-    throw new Error("Unable to build red recommendation zone: missing 15-minute isochrone.");
+    throw new Error(
+      `Unable to build red recommendation zone: missing ${redRecommendationMinutes}-minute isochrone.`
+    );
   }
 
   const style = categoryStyles.red;
   return {
     type: "Feature",
     properties: {
-      id: "red_15_min_walking_contour",
-      name: "15-minute walking red zone",
+      id: `red_${redRecommendationMinutes}_min_walking_contour`,
+      name: `${redRecommendationMinutes}-minute walking red zone`,
       category: "red",
       categoryLabel: style.label,
       stroke: style.color,
       fill: style.fillColor,
       boundaryDescription:
-        "Objective 15-minute pedestrian isochrone from Gare du Nord, intentionally used as the full red recommendation fill.",
+        `Objective ${redRecommendationMinutes}-minute pedestrian isochrone from Gare du Nord, intentionally used as the full red recommendation fill.`,
       boundaryStreets: [
-        "Routing-derived 15-minute pedestrian isochrone from Gare du Nord"
+        `Routing-derived ${redRecommendationMinutes}-minute pedestrian isochrone from Gare du Nord`
       ],
-      label: "15-min red zone",
+      label: `${redRecommendationMinutes}-min red zone`,
       labelPoint: [2.3563, 48.8799],
       vertices: [],
       derivedFrom: {
@@ -297,7 +301,7 @@ async function generateOsrmSampledIsochrones() {
   const contourGenerator = contours()
     .size([grid.width, grid.height])
     .smooth(true)
-    .thresholds([-1200, -900]);
+    .thresholds(contourMinutes.map((minutes) => -minutes * 60).sort((a, b) => a - b));
 
   const features = contourGenerator(values)
     .sort((a, b) => a.value - b.value)
@@ -339,7 +343,7 @@ async function generateOrsIsochrones() {
 
   const body = {
     locations: [origin.coordinates],
-    range: [900, 1200],
+    range: contourMinutes.map((minutes) => minutes * 60).sort((a, b) => a - b),
     range_type: "time",
     attributes: ["area"],
     smoothing: 0.25
@@ -521,7 +525,7 @@ Generated: ${new Date().toISOString()}
 
 ## Conclusion
 
-The deliverable distinguishes objective walking-time contours from subjective accommodation recommendation zones. Per the latest map-owner decision, the red recommendation fill deliberately reuses the objective 15-minute pedestrian isochrone from Gare du Nord. Green and blue recommendation polygons remain separate manually selected accommodation zones. Recommendation polygons are explicit editable GeoJSON geometries and are not inferred from neighbourhood names.
+The deliverable distinguishes objective walking-time contours from subjective accommodation recommendation zones. Per the latest map-owner decision, the red recommendation fill deliberately reuses the objective ${redRecommendationMinutes}-minute pedestrian isochrone from Gare du Nord. Green and blue recommendation polygons remain separate manually selected accommodation zones. Recommendation polygons are explicit editable GeoJSON geometries and are not inferred from neighbourhood names.
 
 ## Sources
 
@@ -549,7 +553,7 @@ ${markdownTable(
 
 ## Recommendation Zone Label Walking Times
 
-These are pedestrian routes to the label point of each recommendation polygon. For green and blue, they are not claims that every point inside the polygon has that same walking time. For red, the polygon itself is the generated 15-minute walking contour.
+These are pedestrian routes to the label point of each recommendation polygon. For green and blue, they are not claims that every point inside the polygon has that same walking time. For red, the polygon itself is the generated ${redRecommendationMinutes}-minute walking contour.
 
 ${markdownTable(
   ["Zone", "Label coordinate lon, lat", "Walking time", "Route distance", "Snapped target"],
@@ -570,7 +574,8 @@ ${zoneSections}
 
 ## Walking-Time Contours
 
-- 15-minute pedestrian contour: objective routing-derived contour from the single Gare du Nord origin; also used as the red recommendation fill.
+- ${redRecommendationMinutes}-minute pedestrian contour: objective routing-derived contour from the single Gare du Nord origin; also used as the red recommendation fill.
+- 15-minute pedestrian contour: objective routing-derived contour from the single Gare du Nord origin.
 - 20-minute pedestrian contour: objective routing-derived contour from the single Gare du Nord origin.
 - Contours file: data/walking-isochrones.geojson.
 - Source method: ${isochrones.method}.
@@ -580,10 +585,10 @@ ${zoneSections}
 - Gare du Nord is represented by the Nominatim coordinate for OSM way/736530618. OSRM snaps route starts to the nearest routable pedestrian graph point; the snap distance is reported above.
 - Long street geocodes, especially Rue des Martyrs and Canal Saint-Martin, represent full linear features. The approved green and blue accommodation polygons use manually selected subsections and separate label points inside those polygons.
 - Manual vertices were selected for green and blue to follow approved boundary streets and to avoid oversized generic neighbourhood polygons.
-- The active red recommendation geometry is not the earlier compact station-frontage selection. It is the full 15-minute walking contour by explicit map-owner instruction.
+- The active red recommendation geometry is not the earlier compact station-frontage selection. It is the full ${redRecommendationMinutes}-minute walking contour by explicit map-owner instruction.
 - OSRM / ORS walking times are modelled routing-service times based on available OSM pedestrian data, not observed travel times.
 - If ORS_API_KEY is not provided, contours are generated from OSRM route-duration samples and interpolation between sampled points. That is routing-derived but approximate between grid points.
-- The 15-minute red contour may include any street segment the routing service considers reachable from Gare du Nord within 15 minutes, including parts north or east of the station. That reachability result is now intentional for red only.
+- The ${redRecommendationMinutes}-minute red contour may include any street segment the routing service considers reachable from Gare du Nord within ${redRecommendationMinutes} minutes, including parts north or east of the station. That reachability result is now intentional for red only.
 `;
 }
 

@@ -167,10 +167,10 @@
   ],
   "zoneLabels": [
     {
-      "id": "red_15_min_walking_contour_label",
-      "zoneId": "red_15_min_walking_contour",
-      "name": "15-minute walking red zone",
-      "label": "15-min red zone",
+      "id": "red_10_min_walking_contour_label",
+      "zoneId": "red_10_min_walking_contour",
+      "name": "10-minute walking red zone",
+      "label": "10-min red zone",
       "category": "red",
       "coordinates": [
         2.3563,
@@ -215,6 +215,30 @@
       "source": "Manual label point placed inside the explicit recommendation polygon"
     },
     {
+      "id": "green_saint_georges_lorette_edge_label",
+      "zoneId": "green_saint_georges_lorette_edge",
+      "name": "Saint-Georges / Lorette edge",
+      "label": "Saint-Georges / Lorette",
+      "category": "green",
+      "coordinates": [
+        2.33745,
+        48.8768
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
+      "id": "green_chabrol_hauteville_edge_label",
+      "zoneId": "green_chabrol_hauteville_edge",
+      "name": "Chabrol / Hauteville edge",
+      "label": "Chabrol / Hauteville",
+      "category": "green",
+      "coordinates": [
+        2.34955,
+        48.87625
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
       "id": "blue_porte_saint_martin_label",
       "zoneId": "blue_porte_saint_martin",
       "name": "Porte Saint-Martin",
@@ -227,6 +251,18 @@
       "source": "Manual label point placed inside the explicit recommendation polygon"
     },
     {
+      "id": "blue_faubourg_poissonniere_enghien_label",
+      "zoneId": "blue_faubourg_poissonniere_enghien",
+      "name": "Faubourg Poissonnière / Enghien",
+      "label": "Faubourg Poissonnière",
+      "category": "blue",
+      "coordinates": [
+        2.34915,
+        48.87325
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
       "id": "blue_canal_saint_martin_central_label",
       "zoneId": "blue_canal_saint_martin_central",
       "name": "Canal Saint-Martin central",
@@ -235,6 +271,18 @@
       "coordinates": [
         2.36355,
         48.8736
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
+      "id": "blue_northern_temple_vertbois_label",
+      "zoneId": "blue_northern_temple_vertbois",
+      "name": "Northern Temple / Vertbois",
+      "label": "Northern Temple",
+      "category": "blue",
+      "coordinates": [
+        2.3604,
+        48.86735
       ],
       "source": "Manual label point placed inside the explicit recommendation polygon"
     },

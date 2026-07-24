@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T18:32:59.066Z",
+  "generatedAt": "2026-07-24T21:05:57.267Z",
   "provider": "routing.openstreetmap.de routed-foot server, OSRM-compatible foot profile",
   "providerUrl": "https://routing.openstreetmap.de/routed-foot/route/v1/foot",
   "origin": {
@@ -211,7 +211,7 @@
   ],
   "zoneLabelRoutes": [
     {
-      "targetName": "15-minute walking red zone",
+      "targetName": "10-minute walking red zone",
       "target": [
         2.3563,
         48.8799
@@ -295,6 +295,48 @@
       "source": "https://routing.openstreetmap.de/routed-foot/route/v1/foot"
     },
     {
+      "targetName": "Saint-Georges / Lorette edge",
+      "target": [
+        2.33745,
+        48.8768
+      ],
+      "durationSeconds": 1319.9,
+      "durationMinutes": 21.998333333333335,
+      "distanceMeters": 1650.3,
+      "snappedOrigin": [
+        2.356232,
+        48.881971
+      ],
+      "snappedTarget": [
+        2.337448,
+        48.876805
+      ],
+      "originSnapDistanceMeters": 4.319190899,
+      "targetSnapDistanceMeters": 0.575065508,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/foot"
+    },
+    {
+      "targetName": "Chabrol / Hauteville edge",
+      "target": [
+        2.34955,
+        48.87625
+      ],
+      "durationSeconds": 782.8,
+      "durationMinutes": 13.046666666666665,
+      "distanceMeters": 979.1,
+      "snappedOrigin": [
+        2.356232,
+        48.881971
+      ],
+      "snappedTarget": [
+        2.349585,
+        48.876335
+      ],
+      "originSnapDistanceMeters": 4.319190899,
+      "targetSnapDistanceMeters": 9.795084543,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/foot"
+    },
+    {
       "targetName": "Porte Saint-Martin",
       "target": [
         2.35565,
@@ -316,6 +358,27 @@
       "source": "https://routing.openstreetmap.de/routed-foot/route/v1/foot"
     },
     {
+      "targetName": "Faubourg Poissonnière / Enghien",
+      "target": [
+        2.34915,
+        48.87325
+      ],
+      "durationSeconds": 1025.4,
+      "durationMinutes": 17.09,
+      "distanceMeters": 1282.2,
+      "snappedOrigin": [
+        2.356232,
+        48.881971
+      ],
+      "snappedTarget": [
+        2.349117,
+        48.873328
+      ],
+      "originSnapDistanceMeters": 4.319190899,
+      "targetSnapDistanceMeters": 9.005612316,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/foot"
+    },
+    {
       "targetName": "Canal Saint-Martin central",
       "target": [
         2.36355,
@@ -334,6 +397,27 @@
       ],
       "originSnapDistanceMeters": 4.319190899,
       "targetSnapDistanceMeters": 17.06357217,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/foot"
+    },
+    {
+      "targetName": "Northern Temple / Vertbois",
+      "target": [
+        2.3604,
+        48.86735
+      ],
+      "durationSeconds": 1687.9,
+      "durationMinutes": 28.131666666666668,
+      "distanceMeters": 2110,
+      "snappedOrigin": [
+        2.356232,
+        48.881971
+      ],
+      "snappedTarget": [
+        2.360353,
+        48.867206
+      ],
+      "originSnapDistanceMeters": 4.319190899,
+      "targetSnapDistanceMeters": 16.38077974,
       "source": "https://routing.openstreetmap.de/routed-foot/route/v1/foot"
     },
     {

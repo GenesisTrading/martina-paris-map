@@ -7,7 +7,7 @@ Production map centred on Gare du Nord for accommodation screening. The map is g
 - `index.html` - interactive Leaflet + OpenStreetMap map.
 - `data/recommendation-zones.geojson` - editable subjective recommendation polygons.
 - `data/places.json` - named places, coordinates, labels and sources.
-- `data/walking-isochrones.geojson` - objective 15-minute and 20-minute walking contours.
+- `data/walking-isochrones.geojson` - objective 10-minute, 15-minute and 20-minute walking contours.
 - `data/routes.json` - pedestrian route times and distances from Gare du Nord.
 - `exports/paris-accommodation-map.png` - 2400 x 1600 PNG export generated with Playwright.
 - `validation-report.md` - source, coordinate, polygon and walking-time validation.
@@ -63,7 +63,7 @@ Route times in `validation-report.md` are always generated from the single Gare 
 
 Edit subjective areas in `src/geography.mjs`:
 
-- Red is generated from the 15-minute pedestrian contour and is not edited as manual street vertices.
+- Red is generated from the 10-minute pedestrian contour and is not edited as manual street vertices.
 - Green and blue `recommendationZones[].vertices` define polygon vertices in GeoJSON order: longitude, latitude.
 - `recommendationZones[].labelPoint` controls the map label location.
 - `namedPlaces` stores geocoded place coordinates and source metadata.
@@ -78,6 +78,6 @@ The build validates that every zone label lies inside its polygon. If a label is
 
 ## Method Boundaries
 
-The red recommendation zone deliberately uses the objective 15-minute walking contour from Gare du Nord. Green and blue recommendation zones are subjective accommodation judgements. Do not read a green or blue polygon as a claim that every address inside it has the same walking time.
+The red recommendation zone deliberately uses the objective 10-minute walking contour from Gare du Nord. Green and blue recommendation zones are subjective accommodation judgements. Do not read a green or blue polygon as a claim that every address inside it has the same walking time.
 
 OpenStreetMap attribution is preserved in the Leaflet tile layer and should not be removed.

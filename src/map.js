@@ -26,6 +26,8 @@ const contourStyles = {
   }
 };
 
+const visibleContourMinutes = new Set([15, 20]);
+
 async function loadJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`Failed to load ${path}`);
@@ -57,8 +59,12 @@ function renderRouteTimes(routes) {
       "Avenue Trudaine",
       "Lower rue des Martyrs",
       "Rue Cadet",
+      "Saint-Georges / Lorette edge",
+      "Chabrol / Hauteville edge",
       "Porte Saint-Martin",
+      "Faubourg Poissonnière / Enghien",
       "Canal Saint-Martin central",
+      "Northern Temple / Vertbois",
       "Jacques Bonsergent / République edge"
     ].includes(route.targetName)
   );
@@ -100,7 +106,14 @@ function addRecommendationZones(map, geojson) {
 }
 
 function addIsochrones(map, geojson) {
-  return L.geoJSON(geojson, {
+  const visibleGeojson = {
+    ...geojson,
+    features: geojson.features.filter((feature) =>
+      visibleContourMinutes.has(feature.properties.minutes)
+    )
+  };
+
+  return L.geoJSON(visibleGeojson, {
     pane: "overlayPane",
     style: (feature) => {
       const style = contourStyles[feature.properties.minutes] ?? contourStyles[20];
