@@ -395,15 +395,58 @@ p {
 }
 
 @media (max-width: 960px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+
   .layout {
     grid-template-columns: 1fr;
-    grid-template-rows: 62vh auto;
+    grid-template-rows: minmax(280px, 42svh) minmax(0, 1fr);
+    height: 100svh;
   }
 
   .sidebar {
-    padding: 28px;
+    gap: 18px;
+    min-height: 0;
+    padding: 22px 26px 28px;
     border-left: 0;
     border-top: 1px solid var(--line);
+  }
+
+  .sidebar__header {
+    padding-bottom: 15px;
+  }
+
+  .sidebar__header::before {
+    width: 58px;
+    height: 3px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 0.98;
+  }
+
+  .summary {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.42;
+  }
+
+  .panel {
+    padding-bottom: 17px;
+  }
+}
+
+@media (max-width: 520px) {
+  .layout {
+    grid-template-rows: minmax(245px, 38svh) minmax(0, 1fr);
+  }
+
+  .sidebar {
+    padding: 20px 24px 28px;
   }
 
   h1 {
