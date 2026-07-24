@@ -1,0 +1,278 @@
+{
+  "checkedDate": "2026-07-24",
+  "coordinateOrder": "longitude, latitude",
+  "origin": {
+    "id": "gare_du_nord",
+    "name": "Gare du Nord",
+    "label": "Gare du Nord",
+    "coordinates": [
+      2.3562878,
+      48.8819585
+    ],
+    "source": {
+      "provider": "Nominatim / OpenStreetMap",
+      "query": "Gare du Nord, Paris, France",
+      "osmType": "way",
+      "osmId": 736530618,
+      "displayName": "Paris Gare du Nord, Boulevard de la Chapelle, Quartier Saint-Vincent-de-Paul, 10th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75010, France"
+    }
+  },
+  "namedPlaces": [
+    {
+      "id": "gare_du_nord",
+      "name": "Gare du Nord",
+      "label": "Gare du Nord",
+      "coordinates": [
+        2.3562878,
+        48.8819585
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Gare du Nord, Paris, France",
+        "osmType": "way",
+        "osmId": 736530618,
+        "displayName": "Paris Gare du Nord, Boulevard de la Chapelle, Quartier Saint-Vincent-de-Paul, 10th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75010, France"
+      }
+    },
+    {
+      "id": "gare_de_lest",
+      "name": "Gare de l'Est",
+      "label": "Gare de l'Est",
+      "coordinates": [
+        2.3594905,
+        48.8770979
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Gare de l'Est, Paris, France",
+        "osmType": "node",
+        "osmId": 2506241285,
+        "displayName": "Paris-East Station, Place du 11 Novembre 1918, Quartier Saint-Vincent-de-Paul, 10th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75010, France"
+      }
+    },
+    {
+      "id": "avenue_trudaine",
+      "name": "Avenue Trudaine",
+      "label": "Avenue Trudaine",
+      "coordinates": [
+        2.3423161,
+        48.8811577
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Avenue Trudaine, Paris, France",
+        "osmType": "way",
+        "osmId": 107612538,
+        "displayName": "Avenue Trudaine, Quartier de Rochechouart, 9th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75009, France"
+      }
+    },
+    {
+      "id": "rue_des_martyrs",
+      "name": "Rue des Martyrs",
+      "label": "Lower rue des Martyrs",
+      "coordinates": [
+        2.3400276,
+        48.8811569
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Rue des Martyrs, Paris, France",
+        "osmType": "way",
+        "osmId": 36893345,
+        "displayName": "Rue des Martyrs, Quartier Saint-Georges, 9th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75009, France"
+      },
+      "note": "The named street was geocoded as a full street. The map label for the approved lower section is manually placed inside the lower rue des Martyrs polygon."
+    },
+    {
+      "id": "rue_cadet",
+      "name": "Rue Cadet",
+      "label": "Rue Cadet",
+      "coordinates": [
+        2.3440609,
+        48.8762375
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Rue Cadet, Paris, France",
+        "osmType": "way",
+        "osmId": 120519181,
+        "displayName": "Rue Cadet, Quartier du Faubourg-Montmartre, 9th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75009, France"
+      }
+    },
+    {
+      "id": "porte_saint_martin",
+      "name": "Porte Saint-Martin",
+      "label": "Porte Saint-Martin",
+      "coordinates": [
+        2.3556515,
+        48.8691459
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Porte Saint-Martin, Paris, France",
+        "osmType": "relation",
+        "osmId": 3178897,
+        "displayName": "Porte Saint-Martin, Boulevard Saint-Martin, Quartier de la Porte-Saint-Martin, 10th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75010, France"
+      }
+    },
+    {
+      "id": "canal_saint_martin",
+      "name": "Canal Saint-Martin",
+      "label": "Canal Saint-Martin",
+      "coordinates": [
+        2.3671691,
+        48.8689561
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Canal Saint-Martin, Paris, France",
+        "osmType": "relation",
+        "osmId": 1164565,
+        "displayName": "Canal Saint-Martin, Paris, Ile-de-France, Metropolitan France, France"
+      },
+      "note": "The named canal was geocoded as a full linear feature. The map label is manually placed inside the approved central canal-side polygon."
+    },
+    {
+      "id": "place_jacques_bonsergent",
+      "name": "Place Jacques Bonsergent",
+      "label": "Jacques Bonsergent",
+      "coordinates": [
+        2.3610301,
+        48.8710142
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Place Jacques Bonsergent, Paris, France",
+        "osmType": "relation",
+        "osmId": 14358328,
+        "displayName": "Place Jacques Bonsergent, Quartier de la Porte-Saint-Martin, 10th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75010, France"
+      }
+    },
+    {
+      "id": "place_de_la_republique",
+      "name": "Place de la République",
+      "label": "République",
+      "coordinates": [
+        2.3639583,
+        48.8675421
+      ],
+      "source": {
+        "provider": "Nominatim / OpenStreetMap",
+        "query": "Place de la République, Paris, France",
+        "osmType": "way",
+        "osmId": 450130138,
+        "displayName": "Place de la République, Quartier de la Folie-Méricourt, 11th Arrondissement, Paris, Ile-de-France, Metropolitan France, 75011, France"
+      }
+    }
+  ],
+  "zoneLabels": [
+    {
+      "id": "red_15_min_walking_contour_label",
+      "zoneId": "red_15_min_walking_contour",
+      "name": "15-minute walking red zone",
+      "label": "15-min red zone",
+      "category": "red",
+      "coordinates": [
+        2.3563,
+        48.8799
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
+      "id": "green_avenue_trudaine_label",
+      "zoneId": "green_avenue_trudaine",
+      "name": "Avenue Trudaine",
+      "label": "Avenue Trudaine",
+      "category": "green",
+      "coordinates": [
+        2.3426,
+        48.88175
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
+      "id": "green_lower_rue_des_martyrs_label",
+      "zoneId": "green_lower_rue_des_martyrs",
+      "name": "Lower rue des Martyrs",
+      "label": "Lower rue des Martyrs",
+      "category": "green",
+      "coordinates": [
+        2.33935,
+        48.87785
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
+      "id": "green_rue_cadet_label",
+      "zoneId": "green_rue_cadet",
+      "name": "Rue Cadet",
+      "label": "Rue Cadet",
+      "category": "green",
+      "coordinates": [
+        2.34335,
+        48.8749
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
+      "id": "blue_porte_saint_martin_label",
+      "zoneId": "blue_porte_saint_martin",
+      "name": "Porte Saint-Martin",
+      "label": "Porte Saint-Martin",
+      "category": "blue",
+      "coordinates": [
+        2.35565,
+        48.86915
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
+      "id": "blue_canal_saint_martin_central_label",
+      "zoneId": "blue_canal_saint_martin_central",
+      "name": "Canal Saint-Martin central",
+      "label": "Canal Saint-Martin",
+      "category": "blue",
+      "coordinates": [
+        2.36355,
+        48.8736
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    },
+    {
+      "id": "blue_jacques_bonsergent_republique_edge_label",
+      "zoneId": "blue_jacques_bonsergent_republique_edge",
+      "name": "Jacques Bonsergent / République edge",
+      "label": "Toward République",
+      "category": "blue",
+      "coordinates": [
+        2.3618,
+        48.871
+      ],
+      "source": "Manual label point placed inside the explicit recommendation polygon"
+    }
+  ],
+  "mapView": {
+    "center": [
+      48.8755,
+      2.3545
+    ],
+    "zoom": 15,
+    "bounds": [
+      [
+        48.8666,
+        2.335
+      ],
+      [
+        48.8847,
+        2.3678
+      ]
+    ]
+  },
+  "sources": {
+    "nominatim": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=...",
+    "overpass": "https://overpass.openstreetmap.fr/api/interpreter",
+    "osrm": "https://routing.openstreetmap.de/routed-foot",
+    "openRouteService": "https://api.openrouteservice.org/v2/isochrones/foot-walking",
+    "osmCopyright": "https://www.openstreetmap.org/copyright"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "paris-accommodation-map",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "export:png": "node scripts/export-png.mjs",
+    "build": "npm run build:data && npm run export:png",
+    "serve": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "@turf/turf": "^7.2.0",
+    "d3-contour": "^4.0.2",
+    "playwright": "^1.54.2"
+  },
+  "devDependencies": {}
+}

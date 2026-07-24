@@ -1,0 +1,978 @@
+{
+  "type": "FeatureCollection",
+  "name": "Paris accommodation recommendation polygons",
+  "checkedDate": "2026-07-24",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "red_15_min_walking_contour",
+        "name": "15-minute walking red zone",
+        "category": "red",
+        "categoryLabel": "Not recommended",
+        "stroke": "#c3312f",
+        "fill": "#e24d42",
+        "boundaryDescription": "Objective 15-minute pedestrian isochrone from Gare du Nord, intentionally used as the full red recommendation fill.",
+        "boundaryStreets": [
+          "Routing-derived 15-minute pedestrian isochrone from Gare du Nord"
+        ],
+        "label": "15-min red zone",
+        "labelPoint": [
+          2.3563,
+          48.8799
+        ],
+        "vertices": [],
+        "derivedFrom": {
+          "file": "data/walking-isochrones.geojson",
+          "featureId": "walk_15_min",
+          "method": "osrm-route-sampled-contours",
+          "coordinateCount": 87
+        }
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                2.3593399,
+                48.8731375
+              ],
+              [
+                2.3601375,
+                48.8739134
+              ],
+              [
+                2.3602506,
+                48.8739625
+              ],
+              [
+                2.361186,
+                48.8747875
+              ],
+              [
+                2.3614625,
+                48.8749716
+              ],
+              [
+                2.3626862,
+                48.8756125
+              ],
+              [
+                2.3626274,
+                48.8764375
+              ],
+              [
+                2.3627875,
+                48.8766113
+              ],
+              [
+                2.3641125,
+                48.8772162
+              ],
+              [
+                2.3644364,
+                48.8772625
+              ],
+              [
+                2.3654375,
+                48.8774412
+              ],
+              [
+                2.3658985,
+                48.8780875
+              ],
+              [
+                2.3658697,
+                48.8789125
+              ],
+              [
+                2.3667625,
+                48.8791649
+              ],
+              [
+                2.3680875,
+                48.8797375
+              ],
+              [
+                2.3680875,
+                48.8797375
+              ],
+              [
+                2.3680875,
+                48.8797375
+              ],
+              [
+                2.367713,
+                48.8805625
+              ],
+              [
+                2.3680875,
+                48.8810208
+              ],
+              [
+                2.3683732,
+                48.8813875
+              ],
+              [
+                2.3684907,
+                48.8822125
+              ],
+              [
+                2.3680875,
+                48.8826133
+              ],
+              [
+                2.3678655,
+                48.8830375
+              ],
+              [
+                2.3678169,
+                48.8838625
+              ],
+              [
+                2.3669257,
+                48.8846875
+              ],
+              [
+                2.3667625,
+                48.8848953
+              ],
+              [
+                2.3654375,
+                48.8848467
+              ],
+              [
+                2.3641826,
+                48.8855125
+              ],
+              [
+                2.3642475,
+                48.8863375
+              ],
+              [
+                2.3641125,
+                48.8865001
+              ],
+              [
+                2.3627875,
+                48.8870757
+              ],
+              [
+                2.3626147,
+                48.8871625
+              ],
+              [
+                2.3614625,
+                48.887667
+              ],
+              [
+                2.3609305,
+                48.8879875
+              ],
+              [
+                2.3601375,
+                48.8883611
+              ],
+              [
+                2.3588125,
+                48.8886167
+              ],
+              [
+                2.3586857,
+                48.8888125
+              ],
+              [
+                2.3574875,
+                48.8893119
+              ],
+              [
+                2.3564646,
+                48.8896375
+              ],
+              [
+                2.3561625,
+                48.8898224
+              ],
+              [
+                2.3559091,
+                48.8896375
+              ],
+              [
+                2.3548375,
+                48.8888238
+              ],
+              [
+                2.3535125,
+                48.888859
+              ],
+              [
+                2.3534509,
+                48.8888125
+              ],
+              [
+                2.3521875,
+                48.8880557
+              ],
+              [
+                2.3520632,
+                48.8879875
+              ],
+              [
+                2.3508625,
+                48.887447
+              ],
+              [
+                2.3495375,
+                48.887265
+              ],
+              [
+                2.3492144,
+                48.8871625
+              ],
+              [
+                2.3482125,
+                48.8867414
+              ],
+              [
+                2.3476902,
+                48.8863375
+              ],
+              [
+                2.3468875,
+                48.8858344
+              ],
+              [
+                2.3462918,
+                48.8855125
+              ],
+              [
+                2.3456643,
+                48.8846875
+              ],
+              [
+                2.3455625,
+                48.8846082
+              ],
+              [
+                2.3445883,
+                48.8838625
+              ],
+              [
+                2.3446464,
+                48.8830375
+              ],
+              [
+                2.3442375,
+                48.8824121
+              ],
+              [
+                2.3441335,
+                48.8822125
+              ],
+              [
+                2.3440628,
+                48.8813875
+              ],
+              [
+                2.3442375,
+                48.8808205
+              ],
+              [
+                2.3444589,
+                48.8805625
+              ],
+              [
+                2.3442375,
+                48.8803771
+              ],
+              [
+                2.3438186,
+                48.8797375
+              ],
+              [
+                2.3442359,
+                48.8789125
+              ],
+              [
+                2.3442375,
+                48.8789114
+              ],
+              [
+                2.3448474,
+                48.8780875
+              ],
+              [
+                2.3447494,
+                48.8772625
+              ],
+              [
+                2.3455625,
+                48.8768978
+              ],
+              [
+                2.3464127,
+                48.8764375
+              ],
+              [
+                2.3468875,
+                48.8756622
+              ],
+              [
+                2.3469661,
+                48.8756125
+              ],
+              [
+                2.3482125,
+                48.8753432
+              ],
+              [
+                2.3491199,
+                48.8747875
+              ],
+              [
+                2.3495375,
+                48.8746299
+              ],
+              [
+                2.3504537,
+                48.8739625
+              ],
+              [
+                2.3508625,
+                48.8734915
+              ],
+              [
+                2.3521875,
+                48.8735667
+              ],
+              [
+                2.3529992,
+                48.8739625
+              ],
+              [
+                2.3535125,
+                48.8743995
+              ],
+              [
+                2.3540237,
+                48.8739625
+              ],
+              [
+                2.3545324,
+                48.8731375
+              ],
+              [
+                2.3548375,
+                48.8727819
+              ],
+              [
+                2.3561625,
+                48.8727706
+              ],
+              [
+                2.3574875,
+                48.8725684
+              ],
+              [
+                2.3588125,
+                48.8726295
+              ],
+              [
+                2.3593399,
+                48.8731375
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "green_avenue_trudaine",
+        "name": "Avenue Trudaine",
+        "category": "green",
+        "categoryLabel": "Recommended",
+        "stroke": "#18794e",
+        "fill": "#2fb36d",
+        "boundaryDescription": "Avenue Trudaine immediate surroundings from Rue des Martyrs to Rue Marguerite-de-Rochechouart / Place d'Anvers, bounded by Boulevard Marguerite-de-Rochechouart to the north and Avenue Trudaine frontage to the south.",
+        "boundaryStreets": [
+          "Avenue Trudaine",
+          "Boulevard Marguerite-de-Rochechouart",
+          "Rue des Martyrs",
+          "Rue Marguerite-de-Rochechouart",
+          "Place d'Anvers",
+          "Rue Bochart-de-Saron"
+        ],
+        "label": "Avenue Trudaine",
+        "labelPoint": [
+          2.3426,
+          48.88175
+        ],
+        "vertices": [
+          {
+            "coordinates": [
+              2.339665,
+              48.8819055
+            ],
+            "note": "Boulevard Marguerite-de-Rochechouart x Rue des Martyrs",
+            "osmNode": 583011680
+          },
+          {
+            "coordinates": [
+              2.3445259,
+              48.8827966
+            ],
+            "note": "Boulevard Marguerite-de-Rochechouart x Place d'Anvers",
+            "osmNode": 94210394
+          },
+          {
+            "coordinates": [
+              2.3466024,
+              48.8819948
+            ],
+            "note": "Avenue Trudaine x Rue Marguerite-de-Rochechouart",
+            "osmNode": 19715146
+          },
+          {
+            "coordinates": [
+              2.3425309,
+              48.8811236
+            ],
+            "note": "Avenue Trudaine x Rue Bochart-de-Saron",
+            "osmNode": 299271453
+          },
+          {
+            "coordinates": [
+              2.3402436,
+              48.8807224
+            ],
+            "note": "Avenue Trudaine x Rue des Martyrs",
+            "osmNode": 94178357
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.339665,
+              48.8819055
+            ],
+            [
+              2.3445259,
+              48.8827966
+            ],
+            [
+              2.3466024,
+              48.8819948
+            ],
+            [
+              2.3425309,
+              48.8811236
+            ],
+            [
+              2.3402436,
+              48.8807224
+            ],
+            [
+              2.339665,
+              48.8819055
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "green_lower_rue_des_martyrs",
+        "name": "Lower rue des Martyrs",
+        "category": "green",
+        "categoryLabel": "Recommended",
+        "stroke": "#18794e",
+        "fill": "#2fb36d",
+        "boundaryDescription": "Lower rue des Martyrs from Rue Notre-Dame-de-Lorette / Rue Saint-Lazare to Rue Clauzel / Rue de Navarin, with immediate side-street frontage only.",
+        "boundaryStreets": [
+          "Rue des Martyrs",
+          "Rue Notre-Dame-de-Lorette",
+          "Rue Saint-Lazare",
+          "Rue Clauzel",
+          "Rue de Navarin",
+          "Rue Henry-Monnier",
+          "Rue Choron",
+          "Rue Manuel"
+        ],
+        "label": "Lower rue des Martyrs",
+        "labelPoint": [
+          2.33935,
+          48.87785
+        ],
+        "vertices": [
+          {
+            "coordinates": [
+              2.3392274,
+              48.8767703
+            ],
+            "note": "Rue des Martyrs x Rue Notre-Dame-de-Lorette / Rue Saint-Lazare",
+            "osmNode": 8296960601
+          },
+          {
+            "coordinates": [
+              2.3401,
+              48.87686
+            ],
+            "note": "Manual east-side lower rue des Martyrs frontage vertex"
+          },
+          {
+            "coordinates": [
+              2.34065,
+              48.87875
+            ],
+            "note": "Manual east-side vertex near Rue Manuel / Rue Clauzel"
+          },
+          {
+            "coordinates": [
+              2.3398288,
+              48.878916
+            ],
+            "note": "Rue des Martyrs x Rue Clauzel",
+            "osmNode": 94220177
+          },
+          {
+            "coordinates": [
+              2.33765,
+              48.87918
+            ],
+            "note": "Manual west-side vertex near Rue Henry-Monnier / Rue Clauzel"
+          },
+          {
+            "coordinates": [
+              2.33795,
+              48.87725
+            ],
+            "note": "Manual west-side lower rue des Martyrs frontage vertex"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.3392274,
+              48.8767703
+            ],
+            [
+              2.3401,
+              48.87686
+            ],
+            [
+              2.34065,
+              48.87875
+            ],
+            [
+              2.3398288,
+              48.878916
+            ],
+            [
+              2.33765,
+              48.87918
+            ],
+            [
+              2.33795,
+              48.87725
+            ],
+            [
+              2.3392274,
+              48.8767703
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "green_rue_cadet",
+        "name": "Rue Cadet",
+        "category": "green",
+        "categoryLabel": "Recommended",
+        "stroke": "#18794e",
+        "fill": "#2fb36d",
+        "boundaryDescription": "Rue Cadet and pleasant immediate surroundings bounded by Rue La Fayette, Rue Richer, Rue du Faubourg-Montmartre, Rue Bleue and Rue de Trévise.",
+        "boundaryStreets": [
+          "Rue Cadet",
+          "Rue La Fayette",
+          "Rue Richer",
+          "Rue du Faubourg-Montmartre",
+          "Rue Bleue",
+          "Rue de Trévise",
+          "Rue Saulnier"
+        ],
+        "label": "Rue Cadet",
+        "labelPoint": [
+          2.34335,
+          48.8749
+        ],
+        "vertices": [
+          {
+            "coordinates": [
+              2.3410134,
+              48.8750946
+            ],
+            "note": "Rue La Fayette x Rue du Faubourg-Montmartre",
+            "osmNode": 94172435
+          },
+          {
+            "coordinates": [
+              2.3436186,
+              48.8757784
+            ],
+            "note": "Rue Cadet x Rue La Fayette",
+            "osmNode": 13361133305
+          },
+          {
+            "coordinates": [
+              2.3446491,
+              48.8760412
+            ],
+            "note": "Rue Bleue x Rue La Fayette",
+            "osmNode": 13932131988
+          },
+          {
+            "coordinates": [
+              2.3453266,
+              48.8740337
+            ],
+            "note": "Rue de Trévise x Rue Richer",
+            "osmNode": 94159488
+          },
+          {
+            "coordinates": [
+              2.3423548,
+              48.8740484
+            ],
+            "note": "Rue Cadet x Rue Richer",
+            "osmNode": 94171698
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.3410134,
+              48.8750946
+            ],
+            [
+              2.3436186,
+              48.8757784
+            ],
+            [
+              2.3446491,
+              48.8760412
+            ],
+            [
+              2.3453266,
+              48.8740337
+            ],
+            [
+              2.3423548,
+              48.8740484
+            ],
+            [
+              2.3410134,
+              48.8750946
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "blue_porte_saint_martin",
+        "name": "Porte Saint-Martin",
+        "category": "blue",
+        "categoryLabel": "Acceptable compromise — check the exact street",
+        "stroke": "#1f5faa",
+        "fill": "#3d86d9",
+        "boundaryDescription": "Porte Saint-Martin compromise polygon around Boulevard Saint-Denis / Boulevard Saint-Martin, Rue du Faubourg Saint-Denis, Rue du Faubourg Saint-Martin and Rue René-Boulanger / Rue Meslay.",
+        "boundaryStreets": [
+          "Boulevard Saint-Denis",
+          "Boulevard Saint-Martin",
+          "Rue du Faubourg Saint-Denis",
+          "Rue du Faubourg Saint-Martin",
+          "Rue René-Boulanger",
+          "Rue Meslay"
+        ],
+        "label": "Porte Saint-Martin",
+        "labelPoint": [
+          2.35565,
+          48.86915
+        ],
+        "vertices": [
+          {
+            "coordinates": [
+              2.35295,
+              48.86974
+            ],
+            "note": "Manual west boundary vertex near Boulevard Saint-Denis / Rue du Faubourg Saint-Denis"
+          },
+          {
+            "coordinates": [
+              2.35635,
+              48.87023
+            ],
+            "note": "Manual Boulevard Saint-Martin north edge vertex"
+          },
+          {
+            "coordinates": [
+              2.35875,
+              48.87015
+            ],
+            "note": "Manual east boundary vertex near Boulevard Saint-Martin / Rue du Faubourg Saint-Martin"
+          },
+          {
+            "coordinates": [
+              2.3587875,
+              48.8689332
+            ],
+            "note": "Rue René-Boulanger x Rue Taylor",
+            "osmNode": 289568129
+          },
+          {
+            "coordinates": [
+              2.35405,
+              48.86815
+            ],
+            "note": "Manual south-west vertex on the Rue René-Boulanger / Rue Meslay side"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.35295,
+              48.86974
+            ],
+            [
+              2.35635,
+              48.87023
+            ],
+            [
+              2.35875,
+              48.87015
+            ],
+            [
+              2.3587875,
+              48.8689332
+            ],
+            [
+              2.35405,
+              48.86815
+            ],
+            [
+              2.35295,
+              48.86974
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "blue_canal_saint_martin_central",
+        "name": "Canal Saint-Martin central",
+        "category": "blue",
+        "categoryLabel": "Acceptable compromise — check the exact street",
+        "stroke": "#1f5faa",
+        "fill": "#3d86d9",
+        "boundaryDescription": "Pleasant western and central canal-side section bounded by Quai de Valmy and Quai de Jemmapes between Rue des Récollets / Rue Lucien-Sampaix and Rue de Lancry / Rue Bichat.",
+        "boundaryStreets": [
+          "Quai de Valmy",
+          "Quai de Jemmapes",
+          "Rue des Récollets",
+          "Rue Lucien-Sampaix",
+          "Rue de Lancry",
+          "Rue Bichat"
+        ],
+        "label": "Canal Saint-Martin",
+        "labelPoint": [
+          2.36355,
+          48.8736
+        ],
+        "vertices": [
+          {
+            "coordinates": [
+              2.3628097,
+              48.8744529
+            ],
+            "note": "Rue Lucien-Sampaix x Quai de Valmy",
+            "osmNode": 5851342227
+          },
+          {
+            "coordinates": [
+              2.3635398,
+              48.8740589
+            ],
+            "note": "Quai de Jemmapes x Rue Bichat",
+            "osmNode": 367947
+          },
+          {
+            "coordinates": [
+              2.36435,
+              48.87278
+            ],
+            "note": "Manual east-bank vertex near Rue de Lancry / Quai de Jemmapes"
+          },
+          {
+            "coordinates": [
+              2.3637458,
+              48.8729141
+            ],
+            "note": "Quai de Valmy x Rue de Lancry",
+            "osmNode": 94142445
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.3628097,
+              48.8744529
+            ],
+            [
+              2.3635398,
+              48.8740589
+            ],
+            [
+              2.36435,
+              48.87278
+            ],
+            [
+              2.3637458,
+              48.8729141
+            ],
+            [
+              2.3628097,
+              48.8744529
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "blue_jacques_bonsergent_republique_edge",
+        "name": "Jacques Bonsergent / République edge",
+        "category": "blue",
+        "categoryLabel": "Acceptable compromise — check the exact street",
+        "stroke": "#1f5faa",
+        "fill": "#3d86d9",
+        "boundaryDescription": "Selected realistically accessible parts toward République, bounded by Boulevard de Magenta, Rue de Lancry, Quai de Valmy / Rue Beaurepaire and Rue Yves-Toudic / Rue de Marseille.",
+        "boundaryStreets": [
+          "Boulevard de Magenta",
+          "Rue de Lancry",
+          "Quai de Valmy",
+          "Rue Beaurepaire",
+          "Rue Yves-Toudic",
+          "Rue de Marseille"
+        ],
+        "label": "Toward République",
+        "labelPoint": [
+          2.3618,
+          48.871
+        ],
+        "vertices": [
+          {
+            "coordinates": [
+              2.3612095,
+              48.8705348
+            ],
+            "note": "Rue de Lancry x Boulevard de Magenta",
+            "osmNode": 243635109
+          },
+          {
+            "coordinates": [
+              2.3637458,
+              48.8729141
+            ],
+            "note": "Quai de Valmy x Rue de Lancry",
+            "osmNode": 94142445
+          },
+          {
+            "coordinates": [
+              2.36425,
+              48.8716
+            ],
+            "note": "Manual east boundary vertex on the Quai de Valmy / Rue Beaurepaire side"
+          },
+          {
+            "coordinates": [
+              2.3637672,
+              48.8699297
+            ],
+            "note": "Rue Beaurepaire x Rue Yves-Toudic",
+            "osmNode": 94141550
+          },
+          {
+            "coordinates": [
+              2.3626499,
+              48.8712258
+            ],
+            "note": "Rue Yves-Toudic x Rue de Marseille",
+            "osmNode": 94141551
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.3612095,
+              48.8705348
+            ],
+            [
+              2.3637458,
+              48.8729141
+            ],
+            [
+              2.36425,
+              48.8716
+            ],
+            [
+              2.3637672,
+              48.8699297
+            ],
+            [
+              2.3626499,
+              48.8712258
+            ],
+            [
+              2.3612095,
+              48.8705348
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
