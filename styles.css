@@ -208,6 +208,38 @@ p {
   line-height: 1.48;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.mobile-map-hint {
+  display: none;
+}
+
+.map-error {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.map-error__message {
+  max-width: 34ch;
+  padding: 16px 18px;
+  border: 1px solid rgba(127, 46, 75, 0.22);
+  border-radius: 6px;
+  background: rgba(255, 253, 248, 0.92);
+  color: var(--rose-dark);
+  text-align: center;
+}
+
 .summary {
   margin-top: 15px;
   max-width: 44ch;
@@ -419,6 +451,24 @@ p {
 
   #map {
     touch-action: pan-y pinch-zoom;
+  }
+
+  .zone-label-marker {
+    display: none !important;
+  }
+
+  .mobile-map-hint {
+    display: block;
+    color: var(--rose-dark);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  #map .leaflet-control-zoom a {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    line-height: 44px;
   }
 
   .sidebar {

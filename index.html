@@ -8,13 +8,22 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       crossorigin=""
+      onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css'"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="layout">
-      <section id="map" aria-label="Paris accommodation recommendation map"></section>
+      <section
+        id="map"
+        aria-label="Paris accommodation recommendation map"
+        aria-describedby="mapDescription"
+      ></section>
       <aside class="sidebar" aria-label="Map explanation">
+        <p class="mobile-map-hint">Tap a coloured area to see its name.</p>
+        <p id="mapDescription" class="visually-hidden">
+          Interactive accommodation recommendation map centred on Gare du Nord.
+        </p>
         <div class="sidebar__header">
           <p class="eyebrow">Paris stay edit</p>
           <h1>Martina's Paris Stay Map</h1>
@@ -63,10 +72,6 @@
       </aside>
     </main>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      crossorigin=""
-    ></script>
     <script type="module" src="./src/map.js"></script>
   </body>
 </html>

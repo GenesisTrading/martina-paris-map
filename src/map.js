@@ -28,6 +28,39 @@ const contourStyles = {
 
 const visibleContourMinutes = new Set([15, 20]);
 
+const leafletScriptUrls = [
+  "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
+  "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
+];
+
+function loadScript(url) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = url;
+    script.crossOrigin = "anonymous";
+    script.addEventListener("load", resolve, { once: true });
+    script.addEventListener("error", () => reject(new Error(`Failed to load ${url}`)), {
+      once: true
+    });
+    document.head.append(script);
+  });
+}
+
+async function loadLeaflet() {
+  if (window.L) return;
+
+  for (const url of leafletScriptUrls) {
+    try {
+      await loadScript(url);
+      if (window.L) return;
+    } catch {
+      // Try the next pinned CDN source.
+    }
+  }
+
+  throw new Error("Leaflet could not be loaded");
+}
+
 async function loadJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`Failed to load ${path}`);
@@ -80,6 +113,15 @@ function renderRouteTimes(routes) {
     .join("");
 }
 
+function renderMapDescription(geojson) {
+  const description = document.querySelector("#mapDescription");
+  const areas = geojson.features.map((feature) => {
+    const category = categoryStyles[feature.properties.category]?.label ?? "Mapped area";
+    return `${feature.properties.label}: ${category}`;
+  });
+  description.textContent = `Accommodation areas shown on the map. ${areas.join(". ")}.`;
+}
+
 function addRecommendationZones(map, geojson) {
   const layer = L.geoJSON(geojson, {
     style: (feature) => ({
@@ -88,7 +130,27 @@ function addRecommendationZones(map, geojson) {
       fillOpacity: 0.38,
       opacity: 0.96,
       weight: 5
-    })
+    }),
+    onEachFeature: (feature, zoneLayer) => {
+      const category = categoryStyles[feature.properties.category]?.label ?? "Mapped area";
+      const popupContent = document.createElement("span");
+      const label = document.createElement("strong");
+      label.textContent = feature.properties.label;
+      popupContent.append(label, document.createTextNode(` — ${category}`));
+      zoneLayer.bindPopup(popupContent, { closeButton: false });
+      zoneLayer.on("add", () => {
+        const element = zoneLayer.getElement();
+        if (!element) return;
+        element.setAttribute("role", "button");
+        element.setAttribute("tabindex", "0");
+        element.setAttribute("aria-label", `${feature.properties.label}: ${category}`);
+        element.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          zoneLayer.openPopup();
+        });
+      });
+    }
   }).addTo(map);
 
   geojson.features.forEach((feature) => {
@@ -175,7 +237,8 @@ function addPlaces(map, places) {
 
 async function main() {
   renderRecommendationLegend();
-  const isMobileLayout = window.matchMedia("(max-width: 960px)").matches;
+  await loadLeaflet();
+  const mobileLayoutQuery = window.matchMedia("(max-width: 960px)");
 
   const [zones, places, routes, isochrones] = await Promise.all([
     loadJson("./data/recommendation-zones.geojson"),
@@ -187,8 +250,15 @@ async function main() {
   const map = L.map("map", {
     zoomControl: true,
     attributionControl: true,
-    preferCanvas: true,
-    dragging: !isMobileLayout
+    preferCanvas: false,
+    dragging: !mobileLayoutQuery.matches
+  });
+  mobileLayoutQuery.addEventListener("change", (event) => {
+    if (event.matches) {
+      map.dragging.disable();
+    } else {
+      map.dragging.enable();
+    }
   });
   map.setView(places.mapView.center, places.mapView.zoom);
 
@@ -202,6 +272,7 @@ async function main() {
   const zoneLayer = addRecommendationZones(map, zones);
   const contourLayer = addIsochrones(map, isochrones);
   addPlaces(map, places);
+  renderMapDescription(zones);
   renderRouteTimes(routes);
 
   const bounds = L.latLngBounds([]);
@@ -211,8 +282,12 @@ async function main() {
 }
 
 main().catch((error) => {
-  const sidebar = document.querySelector(".sidebar");
-  const errorNode = document.createElement("pre");
-  errorNode.textContent = error.stack ?? error.message;
-  sidebar.append(errorNode);
+  console.error(error);
+  const map = document.querySelector("#map");
+  const message = document.createElement("p");
+  message.className = "map-error__message";
+  message.textContent =
+    "The interactive map could not load. Check your connection, then reload the page.";
+  map.classList.add("map-error");
+  map.replaceChildren(message);
 });
