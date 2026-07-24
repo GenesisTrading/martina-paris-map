@@ -395,9 +395,16 @@ p {
 }
 
 @media (max-width: 960px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+  }
+
   .layout {
     grid-template-columns: 1fr;
-    grid-template-rows: clamp(240px, 34svh, 320px) auto;
+    grid-template-rows: clamp(270px, 38svh, 350px) auto;
     min-height: 100svh;
     height: auto;
   }
@@ -438,7 +445,7 @@ p {
 
 @media (max-width: 520px) {
   .layout {
-    grid-template-rows: clamp(205px, 30svh, 260px) auto;
+    grid-template-rows: clamp(235px, 34svh, 290px) auto;
   }
 
   .sidebar {
