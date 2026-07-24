@@ -13,6 +13,71 @@ const categoryStyles = {
   }
 };
 
+const neighborhoodGroups = [
+  {
+    category: "green",
+    title: "Green · Lovely picks",
+    areas: [
+      {
+        routeName: "Chabrol / Hauteville edge",
+        name: "Chabrol–Hauteville",
+        description: "Closest green option; practical, central and easy from the station."
+      },
+      {
+        routeName: "Avenue Trudaine",
+        name: "Avenue Trudaine",
+        description: "Cafés, local atmosphere and convenient access to Montmartre."
+      },
+      {
+        routeName: "Rue Cadet",
+        name: "Rue Cadet",
+        description: "A lively market street with food shops and everyday amenities."
+      },
+      {
+        routeName: "Lower rue des Martyrs",
+        name: "Lower rue des Martyrs",
+        description: "Food shops, cafés and one of the strongest neighborhood atmospheres."
+      },
+      {
+        routeName: "Saint-Georges / Lorette edge",
+        name: "Saint-Georges",
+        description: "Elegant streets with a calmer, more residential character."
+      }
+    ]
+  },
+  {
+    category: "blue",
+    title: "Blue · Good compromises",
+    areas: [
+      {
+        routeName: "Faubourg Poissonnière / Enghien",
+        name: "Faubourg Poissonnière",
+        description: "Convenient and lively; the exact street matters more here."
+      },
+      {
+        routeName: "Canal Saint-Martin central",
+        name: "Canal Saint-Martin",
+        description: "Waterside atmosphere, restaurants and plenty of evening activity."
+      },
+      {
+        routeName: "Jacques Bonsergent / République edge",
+        name: "République edge",
+        description: "Excellent transport and nightlife around a busy urban hub."
+      },
+      {
+        routeName: "Porte Saint-Martin",
+        name: "Porte Saint-Martin",
+        description: "Theatres and central access, with more boulevard traffic."
+      },
+      {
+        routeName: "Northern Temple / Vertbois",
+        name: "Temple Nord",
+        description: "Best for Haut Marais access, but the longest walk from the station."
+      }
+    ]
+  }
+];
+
 const contourStyles = {
   15: {
     color: "#111827",
@@ -118,32 +183,50 @@ function renderRecommendationLegend() {
     .join("");
 }
 
-function renderRouteTimes(routes) {
-  const list = document.querySelector("#timeList");
-  const featured = routes.zoneLabelRoutes.filter((route) =>
-    [
-      "Avenue Trudaine",
-      "Lower rue des Martyrs",
-      "Rue Cadet",
-      "Saint-Georges / Lorette edge",
-      "Chabrol / Hauteville edge",
-      "Porte Saint-Martin",
-      "Faubourg Poissonnière / Enghien",
-      "Canal Saint-Martin central",
-      "Northern Temple / Vertbois",
-      "Jacques Bonsergent / République edge"
-    ].includes(route.targetName)
-  );
-  list.innerHTML = featured
-    .map(
-      (route) => `
-        <div class="time-row">
-          <span>${route.targetName}</span>
-          <span>${route.durationMinutes.toFixed(1)} min</span>
-        </div>
-      `
-    )
+function renderNeighborhoodGuide(routes) {
+  const guide = document.querySelector("#neighborhoodGuide");
+  const routeByName = new Map(routes.zoneLabelRoutes.map((route) => [route.targetName, route]));
+
+  const groups = neighborhoodGroups
+    .map((group) => {
+      const areas = group.areas
+        .map((area) => {
+          const route = routeByName.get(area.routeName);
+          if (!route) return "";
+          return `
+            <article class="guide-item">
+              <div class="guide-item__header">
+                <h3>${area.name}</h3>
+                <span>${Math.round(route.durationMinutes)} min</span>
+              </div>
+              <p>${area.description}</p>
+            </article>
+          `;
+        })
+        .join("");
+
+      return `
+        <details class="guide-group guide-group--${group.category}" open>
+          <summary>
+            <span class="guide-group__title">
+              <span class="guide-group__dot" aria-hidden="true"></span>
+              ${group.title}
+            </span>
+            <span class="guide-group__count">${group.areas.length} areas</span>
+          </summary>
+          <div class="guide-group__content">${areas}</div>
+        </details>
+      `;
+    })
     .join("");
+
+  guide.innerHTML = `
+    ${groups}
+    <div class="guide-station-note">
+      <strong>Immediate Gare du Nord area</strong>
+      <span>Transport-first option; not preferred for the stay.</span>
+    </div>
+  `;
 }
 
 function renderMapDescription(geojson) {
@@ -299,7 +382,7 @@ async function main() {
   });
   addPlaces(map, places);
   renderMapDescription(zones);
-  renderRouteTimes(routes);
+  renderNeighborhoodGuide(routes);
 
   const bounds = L.latLngBounds([]);
   contourLayer.eachLayer((layer) => bounds.extend(layer.getBounds()));
