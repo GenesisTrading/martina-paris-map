@@ -395,18 +395,30 @@ p {
 }
 
 @media (max-width: 960px) {
-  html,
+  html {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   body {
     height: auto;
     min-height: 100%;
-    overflow: auto;
+    overflow: visible;
   }
 
   .layout {
     grid-template-columns: 1fr;
     grid-template-rows: clamp(270px, 38svh, 350px) auto;
+    width: 100%;
     min-height: 100svh;
     height: auto;
+  }
+
+  #map {
+    touch-action: pan-y pinch-zoom;
   }
 
   .sidebar {
