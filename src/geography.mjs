@@ -34,7 +34,7 @@ export const namedPlaces = [
   {
     id: "avenue_trudaine",
     name: "Avenue Trudaine",
-    label: "Avenue Trudaine",
+    label: "Trudaine",
     coordinates: [2.3423161, 48.8811577],
     source: {
       provider: "Nominatim / OpenStreetMap",
@@ -48,7 +48,7 @@ export const namedPlaces = [
   {
     id: "rue_des_martyrs",
     name: "Rue des Martyrs",
-    label: "Lower rue des Martyrs",
+    label: "Rue des Martyrs",
     coordinates: [2.3400276, 48.8811569],
     source: {
       provider: "Nominatim / OpenStreetMap",
@@ -447,7 +447,7 @@ export const recommendationZones = [
       "Rue de Navarin"
     ],
     labelPoint: [2.33745, 48.8768],
-    label: "Saint-Georges / Lorette",
+    label: "Saint-Georges",
     vertices: [
       {
         coordinates: [2.3371321, 48.8760607],
@@ -492,7 +492,7 @@ export const recommendationZones = [
       "Rue La Fayette"
     ],
     labelPoint: [2.34955, 48.87625],
-    label: "Chabrol / Hauteville",
+    label: "Chabrol-Hauteville",
     vertices: [
       {
         coordinates: [2.3482432, 48.8757887],
@@ -529,7 +529,7 @@ export const recommendationZones = [
       "Rue Meslay"
     ],
     labelPoint: [2.35565, 48.86915],
-    label: "Porte Saint-Martin",
+    label: "Porte St-Martin",
     vertices: [
       {
         coordinates: [2.35295, 48.86974],
@@ -567,7 +567,7 @@ export const recommendationZones = [
       "Rue d'Hauteville"
     ],
     labelPoint: [2.34915, 48.87325],
-    label: "Faubourg Poissonnière",
+    label: "Fbg Poissonnière",
     vertices: [
       {
         coordinates: [2.3479115, 48.8740226],
@@ -606,7 +606,7 @@ export const recommendationZones = [
       "Rue Bichat"
     ],
     labelPoint: [2.36355, 48.8736],
-    label: "Canal Saint-Martin",
+    label: "Canal St-Martin",
     vertices: [
       {
         coordinates: [2.3628097, 48.8744529],
@@ -644,7 +644,7 @@ export const recommendationZones = [
       "Rue Volta"
     ],
     labelPoint: [2.3604, 48.86735],
-    label: "Northern Temple",
+    label: "Temple Nord",
     vertices: [
       {
         coordinates: [2.3587875, 48.8689332],
@@ -691,7 +691,7 @@ export const recommendationZones = [
       "Rue de Marseille"
     ],
     labelPoint: [2.3618, 48.871],
-    label: "Toward République",
+    label: "République edge",
     vertices: [
       {
         coordinates: [2.3612095, 48.8705348],

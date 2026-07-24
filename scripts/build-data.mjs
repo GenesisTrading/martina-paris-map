@@ -96,7 +96,7 @@ function buildRedIsochroneZoneFeature(isochrones) {
       boundaryStreets: [
         `Routing-derived ${redRecommendationMinutes}-minute pedestrian isochrone from Gare du Nord`
       ],
-      label: `${redRecommendationMinutes}-min red zone`,
+      label: `${redRecommendationMinutes}-min red`,
       labelPoint: [2.3563, 48.8799],
       vertices: [],
       derivedFrom: {

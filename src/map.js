@@ -95,9 +95,10 @@ function addRecommendationZones(map, geojson) {
     L.marker(latLng(feature.properties.labelPoint), {
       interactive: false,
       icon: L.divIcon({
-        className: "",
-        html: `<div class="zone-label">${feature.properties.label}</div>`,
-        iconSize: null
+        className: "zone-label-marker",
+        html: `<div class="zone-label zone-label--${feature.properties.category}">${feature.properties.label}</div>`,
+        iconSize: [1, 1],
+        iconAnchor: [0, 0]
       })
     }).addTo(map);
   });
