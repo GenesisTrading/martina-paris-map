@@ -395,20 +395,16 @@ p {
 }
 
 @media (max-width: 960px) {
-  html,
-  body {
-    overflow: hidden;
-  }
-
   .layout {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(280px, 42svh) minmax(0, 1fr);
-    height: 100svh;
+    grid-template-rows: clamp(240px, 34svh, 320px) auto;
+    min-height: 100svh;
+    height: auto;
   }
 
   .sidebar {
     gap: 18px;
-    min-height: 0;
+    overflow: visible;
     padding: 22px 26px 28px;
     border-left: 0;
     border-top: 1px solid var(--line);
@@ -442,14 +438,43 @@ p {
 
 @media (max-width: 520px) {
   .layout {
-    grid-template-rows: minmax(245px, 38svh) minmax(0, 1fr);
+    grid-template-rows: clamp(205px, 30svh, 260px) auto;
   }
 
   .sidebar {
-    padding: 20px 24px 28px;
+    gap: 16px;
+    padding: 18px 22px 28px;
   }
 
   h1 {
-    font-size: 31px;
+    font-size: 28px;
+  }
+
+  .eyebrow {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .summary {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .zone-label {
+    max-width: 108px;
+    padding: 3px 5px 4px;
+    font-size: 9.5px;
+    box-shadow: 0 1px 3px rgba(80, 43, 58, 0.1);
+  }
+
+  .station-label {
+    padding: 6px 7px;
+    font-size: 13px;
+  }
+
+  .place-label {
+    max-width: 94px;
+    padding: 3px 5px;
+    font-size: 9.5px;
   }
 }
