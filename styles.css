@@ -471,6 +471,15 @@ p {
     line-height: 44px;
   }
 
+  #map .leaflet-control-attribution {
+    max-width: calc(100vw - 16px);
+    padding: 2px 4px;
+    font-size: 10px;
+    line-height: 1.15;
+    text-align: right;
+    white-space: normal;
+  }
+
   .sidebar {
     gap: 18px;
     overflow: visible;
@@ -506,8 +515,12 @@ p {
 }
 
 @media (max-width: 520px) {
+  #map .leaflet-control-scale {
+    display: none;
+  }
+
   .layout {
-    grid-template-rows: clamp(235px, 34svh, 290px) auto;
+    grid-template-rows: clamp(270px, 38svh, 320px) auto;
   }
 
   .sidebar {

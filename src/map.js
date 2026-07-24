@@ -28,6 +28,28 @@ const contourStyles = {
 
 const visibleContourMinutes = new Set([15, 20]);
 
+function recommendationZoneStyle(feature, isMobileLayout) {
+  return {
+    color: feature.properties.stroke,
+    fillColor: feature.properties.fill,
+    fillOpacity: 0.38,
+    opacity: 0.96,
+    weight: isMobileLayout ? 3 : 5
+  };
+}
+
+function walkingContourStyle(feature, isMobileLayout) {
+  const style = contourStyles[feature.properties.minutes] ?? contourStyles[20];
+  const mobileWeight = feature.properties.minutes === 15 ? 4 : 3;
+  return {
+    color: style.color,
+    dashArray: style.dashArray,
+    fill: false,
+    opacity: isMobileLayout ? 0.82 : 0.95,
+    weight: isMobileLayout ? mobileWeight : style.weight
+  };
+}
+
 const leafletScriptUrls = [
   "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
   "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
@@ -122,15 +144,9 @@ function renderMapDescription(geojson) {
   description.textContent = `Accommodation areas shown on the map. ${areas.join(". ")}.`;
 }
 
-function addRecommendationZones(map, geojson) {
+function addRecommendationZones(map, geojson, isMobileLayout) {
   const layer = L.geoJSON(geojson, {
-    style: (feature) => ({
-      color: feature.properties.stroke,
-      fillColor: feature.properties.fill,
-      fillOpacity: 0.38,
-      opacity: 0.96,
-      weight: 5
-    }),
+    style: (feature) => recommendationZoneStyle(feature, isMobileLayout),
     onEachFeature: (feature, zoneLayer) => {
       const category = categoryStyles[feature.properties.category]?.label ?? "Mapped area";
       const popupContent = document.createElement("span");
@@ -168,7 +184,7 @@ function addRecommendationZones(map, geojson) {
   return layer;
 }
 
-function addIsochrones(map, geojson) {
+function addIsochrones(map, geojson, isMobileLayout) {
   const visibleGeojson = {
     ...geojson,
     features: geojson.features.filter((feature) =>
@@ -178,16 +194,7 @@ function addIsochrones(map, geojson) {
 
   return L.geoJSON(visibleGeojson, {
     pane: "overlayPane",
-    style: (feature) => {
-      const style = contourStyles[feature.properties.minutes] ?? contourStyles[20];
-      return {
-        color: style.color,
-        dashArray: style.dashArray,
-        fill: false,
-        opacity: 0.95,
-        weight: style.weight
-      };
-    }
+    style: (feature) => walkingContourStyle(feature, isMobileLayout)
   }).addTo(map);
 }
 
@@ -253,24 +260,27 @@ async function main() {
     preferCanvas: false,
     dragging: !mobileLayoutQuery.matches
   });
-  mobileLayoutQuery.addEventListener("change", (event) => {
-    if (event.matches) {
-      map.dragging.disable();
-    } else {
-      map.dragging.enable();
-    }
-  });
   map.setView(places.mapView.center, places.mapView.zoom);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
+  map.attributionControl.setPrefix(false);
 
   L.control.scale({ metric: true, imperial: false, position: "bottomleft" }).addTo(map);
 
-  const zoneLayer = addRecommendationZones(map, zones);
-  const contourLayer = addIsochrones(map, isochrones);
+  const zoneLayer = addRecommendationZones(map, zones, mobileLayoutQuery.matches);
+  const contourLayer = addIsochrones(map, isochrones, mobileLayoutQuery.matches);
+  mobileLayoutQuery.addEventListener("change", (event) => {
+    if (event.matches) {
+      map.dragging.disable();
+    } else {
+      map.dragging.enable();
+    }
+    zoneLayer.setStyle((feature) => recommendationZoneStyle(feature, event.matches));
+    contourLayer.setStyle((feature) => walkingContourStyle(feature, event.matches));
+  });
   addPlaces(map, places);
   renderMapDescription(zones);
   renderRouteTimes(routes);
