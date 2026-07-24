@@ -175,6 +175,7 @@ function addPlaces(map, places) {
 
 async function main() {
   renderRecommendationLegend();
+  const isMobileLayout = window.matchMedia("(max-width: 960px)").matches;
 
   const [zones, places, routes, isochrones] = await Promise.all([
     loadJson("./data/recommendation-zones.geojson"),
@@ -186,7 +187,8 @@ async function main() {
   const map = L.map("map", {
     zoomControl: true,
     attributionControl: true,
-    preferCanvas: true
+    preferCanvas: true,
+    dragging: !isMobileLayout
   });
   map.setView(places.mapView.center, places.mapView.zoom);
 
