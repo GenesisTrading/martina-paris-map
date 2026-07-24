@@ -28,6 +28,11 @@ const contourStyles = {
 
 const visibleContourMinutes = new Set([15, 20]);
 
+const parisBoundsCoordinates = [
+  [48.8156, 2.2241],
+  [48.9022, 2.4699]
+];
+
 function recommendationZoneStyle(feature, isMobileLayout) {
   return {
     color: feature.properties.stroke,
@@ -48,6 +53,12 @@ function walkingContourStyle(feature, isMobileLayout) {
     opacity: isMobileLayout ? 0.82 : 0.95,
     weight: isMobileLayout ? mobileWeight : style.weight
   };
+}
+
+function syncParisViewLimits(map, parisBounds) {
+  const minZoom = map.getBoundsZoom(parisBounds, true);
+  map.setMinZoom(minZoom);
+  if (map.getZoom() < minZoom) map.setZoom(minZoom);
 }
 
 const leafletScriptUrls = [
@@ -254,13 +265,18 @@ async function main() {
     loadJson("./data/walking-isochrones.geojson")
   ]);
 
+  const parisBounds = L.latLngBounds(parisBoundsCoordinates);
   const map = L.map("map", {
     zoomControl: true,
     attributionControl: true,
     preferCanvas: false,
-    dragging: !mobileLayoutQuery.matches
+    dragging: !mobileLayoutQuery.matches,
+    maxBounds: parisBounds,
+    maxBoundsViscosity: 1
   });
   map.setView(places.mapView.center, places.mapView.zoom);
+  syncParisViewLimits(map, parisBounds);
+  map.on("resize", () => syncParisViewLimits(map, parisBounds));
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,

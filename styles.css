@@ -464,11 +464,40 @@ p {
     font-weight: 700;
   }
 
+  #map .leaflet-control-zoom {
+    gap: 2px;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
   #map .leaflet-control-zoom a {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
     width: 44px;
     height: 44px;
-    font-size: 24px;
-    line-height: 44px;
+    border: 0 !important;
+    background: transparent;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  #map .leaflet-control-zoom a::before {
+    position: absolute;
+    z-index: -1;
+    inset: 4px;
+    border: 1px solid rgba(127, 46, 75, 0.22);
+    border-radius: 4px;
+    background: #fffdf8;
+    box-shadow: 0 2px 8px rgba(80, 43, 58, 0.14);
+    content: "";
+  }
+
+  #map .leaflet-control-zoom a.leaflet-disabled {
+    opacity: 0.55;
   }
 
   #map .leaflet-control-attribution {
