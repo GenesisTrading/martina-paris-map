@@ -1,14 +1,14 @@
 const categoryStyles = {
   red: {
-    label: "Not recommended",
+    label: "Best to avoid",
     className: "swatch--red"
   },
   green: {
-    label: "Recommended",
+    label: "Lovely picks",
     className: "swatch--green"
   },
   blue: {
-    label: "Acceptable compromise — check the exact street",
+    label: "Good compromise — check the street",
     className: "swatch--blue"
   }
 };

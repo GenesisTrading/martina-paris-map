@@ -22,7 +22,7 @@
         "boundaryStreets": [
           "Routing-derived 10-minute pedestrian isochrone from Gare du Nord"
         ],
-        "label": "10-min red zone",
+        "label": "10-min red",
         "labelPoint": [
           2.3563,
           48.8799
@@ -572,7 +572,7 @@
           "Rue Henry-Monnier",
           "Rue de Navarin"
         ],
-        "label": "Saint-Georges / Lorette",
+        "label": "Saint-Georges",
         "labelPoint": [
           2.33745,
           48.8768
@@ -678,7 +678,7 @@
           "Rue de Chabrol",
           "Rue La Fayette"
         ],
-        "label": "Chabrol / Hauteville",
+        "label": "Chabrol-Hauteville",
         "labelPoint": [
           2.34955,
           48.87625
@@ -762,7 +762,7 @@
           "Rue René-Boulanger",
           "Rue Meslay"
         ],
-        "label": "Porte Saint-Martin",
+        "label": "Porte St-Martin",
         "labelPoint": [
           2.35565,
           48.86915
@@ -854,7 +854,7 @@
           "Rue d'Enghien",
           "Rue d'Hauteville"
         ],
-        "label": "Faubourg Poissonnière",
+        "label": "Fbg Poissonnière",
         "labelPoint": [
           2.34915,
           48.87325
@@ -940,7 +940,7 @@
           "Rue de Lancry",
           "Rue Bichat"
         ],
-        "label": "Canal Saint-Martin",
+        "label": "Canal St-Martin",
         "labelPoint": [
           2.36355,
           48.8736
@@ -1025,7 +1025,7 @@
           "Rue du Vertbois",
           "Rue Volta"
         ],
-        "label": "Northern Temple",
+        "label": "Temple Nord",
         "labelPoint": [
           2.3604,
           48.86735
@@ -1133,7 +1133,7 @@
           "Rue Yves-Toudic",
           "Rue de Marseille"
         ],
-        "label": "Toward République",
+        "label": "République edge",
         "labelPoint": [
           2.3618,
           48.871

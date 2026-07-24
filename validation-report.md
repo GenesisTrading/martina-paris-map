@@ -1,7 +1,7 @@
 # Paris accommodation map validation report
 
 Checked date: 2026-07-24
-Generated: 2026-07-24T21:05:57.281Z
+Generated: 2026-07-24T21:25:29.889Z
 
 ## Conclusion
 
@@ -53,17 +53,17 @@ These are pedestrian routes to the label point of each recommendation polygon. F
 
 | Zone ID | Label | Label coordinate lon, lat | Inside polygon |
 | --- | --- | --- | --- |
-| red_10_min_walking_contour | 10-min red zone | 2.3563000, 48.8799000 | yes |
+| red_10_min_walking_contour | 10-min red | 2.3563000, 48.8799000 | yes |
 | green_avenue_trudaine | Avenue Trudaine | 2.3426000, 48.8817500 | yes |
 | green_lower_rue_des_martyrs | Lower rue des Martyrs | 2.3393500, 48.8778500 | yes |
 | green_rue_cadet | Rue Cadet | 2.3433500, 48.8749000 | yes |
-| green_saint_georges_lorette_edge | Saint-Georges / Lorette | 2.3374500, 48.8768000 | yes |
-| green_chabrol_hauteville_edge | Chabrol / Hauteville | 2.3495500, 48.8762500 | yes |
-| blue_porte_saint_martin | Porte Saint-Martin | 2.3556500, 48.8691500 | yes |
-| blue_faubourg_poissonniere_enghien | Faubourg Poissonnière | 2.3491500, 48.8732500 | yes |
-| blue_canal_saint_martin_central | Canal Saint-Martin | 2.3635500, 48.8736000 | yes |
-| blue_northern_temple_vertbois | Northern Temple | 2.3604000, 48.8673500 | yes |
-| blue_jacques_bonsergent_republique_edge | Toward République | 2.3618000, 48.8710000 | yes |
+| green_saint_georges_lorette_edge | Saint-Georges | 2.3374500, 48.8768000 | yes |
+| green_chabrol_hauteville_edge | Chabrol-Hauteville | 2.3495500, 48.8762500 | yes |
+| blue_porte_saint_martin | Porte St-Martin | 2.3556500, 48.8691500 | yes |
+| blue_faubourg_poissonniere_enghien | Fbg Poissonnière | 2.3491500, 48.8732500 | yes |
+| blue_canal_saint_martin_central | Canal St-Martin | 2.3635500, 48.8736000 | yes |
+| blue_northern_temple_vertbois | Temple Nord | 2.3604000, 48.8673500 | yes |
+| blue_jacques_bonsergent_republique_edge | République edge | 2.3618000, 48.8710000 | yes |
 
 Result: all labels lie inside their assigned polygons.
 

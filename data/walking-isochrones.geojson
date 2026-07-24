@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "name": "Gare du Nord pedestrian isochrones",
-  "generatedAt": "2026-07-24T21:05:34.636Z",
+  "generatedAt": "2026-07-24T21:25:07.212Z",
   "method": "osrm-route-sampled-contours",
   "assumptions": [
     "The routing.openstreetmap.de routed-foot endpoint does not provide a native isochrone endpoint.",

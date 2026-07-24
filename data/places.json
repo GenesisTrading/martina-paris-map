@@ -53,7 +53,7 @@
     {
       "id": "avenue_trudaine",
       "name": "Avenue Trudaine",
-      "label": "Avenue Trudaine",
+      "label": "Trudaine",
       "coordinates": [
         2.3423161,
         48.8811577
@@ -69,7 +69,7 @@
     {
       "id": "rue_des_martyrs",
       "name": "Rue des Martyrs",
-      "label": "Lower rue des Martyrs",
+      "label": "Rue des Martyrs",
       "coordinates": [
         2.3400276,
         48.8811569
@@ -170,7 +170,7 @@
       "id": "red_10_min_walking_contour_label",
       "zoneId": "red_10_min_walking_contour",
       "name": "10-minute walking red zone",
-      "label": "10-min red zone",
+      "label": "10-min red",
       "category": "red",
       "coordinates": [
         2.3563,
@@ -218,7 +218,7 @@
       "id": "green_saint_georges_lorette_edge_label",
       "zoneId": "green_saint_georges_lorette_edge",
       "name": "Saint-Georges / Lorette edge",
-      "label": "Saint-Georges / Lorette",
+      "label": "Saint-Georges",
       "category": "green",
       "coordinates": [
         2.33745,
@@ -230,7 +230,7 @@
       "id": "green_chabrol_hauteville_edge_label",
       "zoneId": "green_chabrol_hauteville_edge",
       "name": "Chabrol / Hauteville edge",
-      "label": "Chabrol / Hauteville",
+      "label": "Chabrol-Hauteville",
       "category": "green",
       "coordinates": [
         2.34955,
@@ -242,7 +242,7 @@
       "id": "blue_porte_saint_martin_label",
       "zoneId": "blue_porte_saint_martin",
       "name": "Porte Saint-Martin",
-      "label": "Porte Saint-Martin",
+      "label": "Porte St-Martin",
       "category": "blue",
       "coordinates": [
         2.35565,
@@ -254,7 +254,7 @@
       "id": "blue_faubourg_poissonniere_enghien_label",
       "zoneId": "blue_faubourg_poissonniere_enghien",
       "name": "Faubourg Poissonnière / Enghien",
-      "label": "Faubourg Poissonnière",
+      "label": "Fbg Poissonnière",
       "category": "blue",
       "coordinates": [
         2.34915,
@@ -266,7 +266,7 @@
       "id": "blue_canal_saint_martin_central_label",
       "zoneId": "blue_canal_saint_martin_central",
       "name": "Canal Saint-Martin central",
-      "label": "Canal Saint-Martin",
+      "label": "Canal St-Martin",
       "category": "blue",
       "coordinates": [
         2.36355,
@@ -278,7 +278,7 @@
       "id": "blue_northern_temple_vertbois_label",
       "zoneId": "blue_northern_temple_vertbois",
       "name": "Northern Temple / Vertbois",
-      "label": "Northern Temple",
+      "label": "Temple Nord",
       "category": "blue",
       "coordinates": [
         2.3604,
@@ -290,7 +290,7 @@
       "id": "blue_jacques_bonsergent_republique_edge_label",
       "zoneId": "blue_jacques_bonsergent_republique_edge",
       "name": "Jacques Bonsergent / République edge",
-      "label": "Toward République",
+      "label": "République edge",
       "category": "blue",
       "coordinates": [
         2.3618,
